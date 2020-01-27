@@ -1,0 +1,25 @@
+image: mingc/android-build-box:1.3.0
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - gradle
+        script:
+          - chmod +x gradlew
+          - echo 'inside default branch. tests should run now.'
+          - ./gradlew test
+  branches:
+    master:
+          - step:
+              caches:
+                - gradle
+              name: Staging Debug Build
+              script:
+                - ./gradlew assembleStagingDebug
+                - . ./latestbuild.sh
+                - curl -F file="@changelog" -F "initial_comment=What is New"  -F channels=channel_one,channel_two -F token=${ANDROID_RELEASE_TOKEN} https://slack.com/api/files.upload
+                - curl -F file="@$LATEST_APK" -F channels=channel_one,channel_two -F token=${ANDROID_RELEASE_TOKEN} https://slack.com/api/files.upload -v
+
+              artifacts:
+                - app/build/outputs/apk/staging/debug/*.apk
