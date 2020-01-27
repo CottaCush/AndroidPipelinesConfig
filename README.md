@@ -20,4 +20,4 @@ You can get the files in two ways:
    
 
  **- Setup your Bitbucket repository see how here :**
- Read Guide 
+ [Read Guide](https://medium.com/cotta-cush/improving-your-workflow-with-bitbucket-pipelines-for-continuous-delivery-of-android-apps-232a5ad067dd) 
