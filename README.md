@@ -14,9 +14,10 @@ You can get the files in two ways:
   a)  You can download the whole project over git or as a zip file and Copy the files in this repository  to the root of your project. 
   Or 
   b) You can download the individual files over curl by running the below commands in a terminal  whose directory is changed to the root of your project
+
     i) curl -L -O https://raw.githubusercontent.com/CottaCush/AndroidPipelinesConfig/master/bitbucket-pipelines.yml
     ii) curl -L -O https://raw.githubusercontent.com/CottaCush/AndroidPipelinesConfig/master/latestbuild.sh
-    
+   
 
  **- Setup your Bitbucket repository see how here :**
  Read Guide 
